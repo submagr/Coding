@@ -21,6 +21,7 @@ class stack{
 			node* top=NULL;
 			int length=0;
 		}
+
 		node* push(node* newNode){
 			if(top==NULL){
 				top=newNode;
@@ -33,6 +34,7 @@ class stack{
 			length++;
 			return top;
 		}
+
 		node* pop(){
 			if(top==NULL)
 				return top;
@@ -42,6 +44,7 @@ class stack{
 			length--;
 			return popped;
 		}
+
 		void print(){
 			node* temp = top;
 			while(temp!=NULL){
@@ -54,6 +57,7 @@ class stack{
 class list {
 	public:
 		node * head=NULL;
+
 		node * insert(int val, node * head){
 			node * newNode = new node();
 			newNode->val=val;
@@ -70,32 +74,14 @@ class list {
 			}
 			return head;
 		}
+
 		void print(node* head){
 			node * currNode = head;
-			//printf("%d", head->val);
 			while(currNode != NULL){
 				printf("%d ", currNode->val);
 				currNode=currNode->next;
 			}
 			printf("\n");
-		}
-
-		node* reverse(node * initialHead){
-			if(initialHead == NULL){
-				return NULL;
-			}
-			node * newHead = reverse(initialHead->next);
-			initialHead->next = NULL;
-			node * currPos = newHead;
-			while(currPos!=NULL && currPos->next!=NULL){
-				currPos = currPos->next;
-			}
-			if(currPos==NULL){
-				newHead = initialHead;
-			}else{
-				currPos->next = initialHead;
-			}
-			return newHead;
 		}
 };
 
@@ -132,8 +118,6 @@ int main(){
 			}
 		}
 	}
-	//st->print();
-	//printf("%d\n",st->pop()->val);
 	ls.print(newHead);
 	return 0;
 }
